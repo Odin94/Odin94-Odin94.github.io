@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creativity Technique Recommender</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cover">
+        <h1 id="header">Recommender für Kreativitätstechniken</h1>
+        
+        <!-- STEP ONE -->
+        <div id="goalChoice" class="container-fluid">
+            <div class="stepOneColumn">
+                <h2>Wähle ein oder mehrere Ziele, die du mit einer Kreativitätstechnik erreichen möchtest:</h2>
+                <div id="goals" class="row">
+                    <div id="goals-Problems" class="col col-md-2 col-md-offset-2">
+                        <h3>Probleme erkennen und verdeutlichen</h3>
+                    </div>
+
+                    <div id="goals-Knowledge" class="col col-md-2">
+                        <h3>Problemrelevantes Wissen sammeln</h3>
+                    </div>
+
+                    <div id="goals-Ideas" class="col col-md-2">
+                        <h3>Neue Ideen generieren</h3>
+                    </div>
+
+                    <div id="goals-Evaluate" class="col col-md-2">
+                        <h3>Bestehende Ideen bewerten und auswählen</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stepOneColumn">
+                <!-- <h4 id="explanationHeadline">Wann du welche Ziele wählen solltest:</h4> -->
+                <div id="explanations" class="row">
+                    <div id="ex-Problems" class="col col-md-2 col-md-offset-2"><h4>Wenn du weißt, dass du ein Problem kreativ lösen musst, du aber nicht genau weißt, was das Problem ist.</h4></div>
+                    <div id="ex-Knowledge" class="col col-md-2"><h4>Wenn du weißt, welches Problem du lösen musst, du aber nicht genug über das Problem weißt, um sinnvolle Ideen zu generieren.</h4></div>
+                    <div id="ex-Ideas" class="col col-md-2"><h4>Wenn du weißt, welches Problem du lösen musst, du dich mit dem Problem auskennst und Ideen zur Lösung generieren möchtest.</h4></div>
+                    <div id="ex-Evaluate" class="col col-md-2"><h4>Wenn du bereits mehrere Ideen zur Lösung des Problems hast und diese Bewerten willst bzw. dich entscheiden musst, welche Lösungsidee du anwenden willst.</h4></div>
+                </div>
+            </div>
+
+            <!-- KO-Criteria -->
+            <div id="KOCriteria">
+                <form>
+                    <h1>Filter Wählen:</h1>
+                    <!-- Group / Single -->
+                    <fieldset class="form-group">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="singleGroupKO" id="radioSingleKO" value="radioSingle">
+                                Einzelperson
+                          </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="singleGroupKO" id="radioGroupKO" value="radioGroup">
+                                Gruppe
+                          </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="singleGroupKO" id="radioGroupBothKO" value="radioGroupBoth" checked>
+                                Beides
+                          </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Physical Object -->
+                    <fieldset class="form-group">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="physKO" id="radioWithPhysKO" value="radioWithPhys">
+                                Mit Hilfsgegenstand
+                          </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="physKO" id="radioWithoutPhysKO" value="radioWithoutPhys">
+                                Ohne Hilfsgegenstand
+                          </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="physKO" id="radioPhysBothKO" value="radioPhysBoth" checked>
+                                Beides
+                          </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Moderated -->
+                    <fieldset class="form-group">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="moderatedKO" id="radioModeratedKO" value="radioModerated">
+                                Mit Moderator
+                          </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="moderatedKO" id="radioNotModeratedKO" value="radioNotModerated">
+                                Ohne Moderator
+                          </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="moderatedKO" id="radioModeratedBothKO" value="radioModeratedBoth" checked>
+                                Beides
+                          </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Duration -->
+                    <fieldset class="form-group">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="durationKO" id="radioShortDurationKO" value="radioShortDuration">
+                                Kurze Anwendungsdauer
+                          </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="durationKO" id="radioLongDurationKO" value="radioLongDuration">
+                                Lange Anwendungsdauer
+                          </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="durationKO" id="radioBothDurationKO" value="radioBothDuration" checked>
+                                Egal
+                          </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Difficulty -->
+                    <fieldset class="form-group">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="difficultyKO" id="radioEasyKO" value="radioEasy">
+                                Einfache Anwendung
+                          </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="difficultyKO" id="radioDifficultKO" value="radioDifficult">
+                                Nicht-So-Einfache Anwendung
+                          </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="difficultyKO" id="radioDiffBothKO" value="radioDiffBoth" checked>
+                                Beides
+                          </label>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <br>
+            <button id="generateRecommendations" class="btn btn-lg btn-primary">Empfehlungen Generieren!</button>
+        </div>
+
+        <!-- STEP TWO -->
+        <div id="recommendationChoice" class="container-fluid">        
+            <!-- Techniques -->
+            <div class="row">
+                <div class="col col-md-4">
+                    <div class="jumbotron techniqueRecommendation">
+                        <div id="firstTechnique">
+                            <h1 id="firstTechniqueName"></h1>
+                            <p id="firstTechniqueDescription"></p>
+                            <hr>
+                            <!-- Properties -->
+                            <div class="row techniqueProperties">
+                                <div class="col col-md-4">
+                                    <p class="propertyLabel"><strong>Einzeln/Gruppe: </strong></p>
+                                    <p id="firstTechniqueGroup"></p>
+                                </div>
+                                <div class="col col-md-4">
+                                    <p class="propertyLabel"><strong>Hilfsgegenstand: </strong></p>
+                                    <p id="firstTechniquePhys"></p>
+                                </div>
+                                <div class="col col-md-4">
+                                    <p class="propertyLabel"><strong>Moderiert: </strong></p>
+                                    <p id="firstTechniqueMod"></p>
+                                </div>
+                            </div>
+                            <div class="row techniqueProperties">
+                                <div class="col col-md-6">
+                                    <p class="propertyLabel"><strong>Dauer: </strong></p>
+                                    <p id="firstTechniqueDuration"></p>
+                                </div>
+                                <div class="col col-md-6">
+                                    <p class="propertyLabel"><strong>Schwierigkeit: </strong></p>
+                                    <p id="firstTechniqueDifficulty"></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="firstAnotherButton" class="btn btn-lg btn-warning">Durch Ähnliche Technik Ersetzen!</button>
+                    </div>
+                </div>
+
+                <div class="col col-md-4">
+                    <div class="jumbotron techniqueRecommendation">
+                        <div id="secondTechnique">
+                            <h1 id="secondTechniqueName"></h1>
+                            <p id="secondTechniqueDescription"></p>
+                            <hr>
+                            <!-- Properties -->
+                            <div class="row techniqueProperties">
+                                <div class="col col-md-4">
+                                    <p class="propertyLabel"><strong>Einzeln/Gruppe: </strong></p>
+                                    <p id="secondTechniqueGroup"></p>
+                                </div>
+                                <div class="col col-md-4">
+                                    <p class="propertyLabel"><strong>Hilfsgegenstand: </strong></p>
+                                    <p id="secondTechniquePhys"></p>
+                                </div>
+                                <div class="col col-md-4">
+                                    <p class="propertyLabel"><strong>Moderiert: </strong></p>
+                                    <p id="secondTechniqueMod"></p>
+                                </div>
+                            </div>
+                            <div class="row techniqueProperties">
+                                <div class="col col-md-6">
+                                    <p class="propertyLabel"><strong>Dauer: </strong></p>
+                                    <p id="secondTechniqueDuration"></p>
+                                </div>
+                                <div class="col col-md-6">
+                                    <p class="propertyLabel"><strong>Schwierigkeit: </strong></p>
+                                    <p id="secondTechniqueDifficulty"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="secondAnotherButton" class="btn btn-lg btn-warning">Durch Ähnliche Technik Ersetzen!</button>
+                    </div>
+                </div>
+
+                <div class="col col-md-4">
+                    <div class="jumbotron techniqueRecommendation">
+                        <div id="thirdTechnique">
+                            <h1 id="thirdTechniqueName"></h1>
+                            <p id="thirdTechniqueDescription"></p>
+                            <hr>
+                            <!-- Properties -->
+                            <div class="row techniqueProperties">
+                                <div class="col col-md-4">
+                                    <p class="propertyLabel"><strong>Einzeln/Gruppe: </strong></p>
+                                    <p id="thirdTechniqueGroup"></p>
+                                </div>
+                                <div class="col col-md-4">
+                                    <p class="propertyLabel"><strong>Hilfsgegenstand: </strong></p>
+                                    <p id="thirdTechniquePhys"></p>
+                                </div>
+                                <div class="col col-md-4">
+                                    <p class="propertyLabel"><strong>Moderiert: </strong></p>
+                                    <p id="thirdTechniqueMod"></p>
+                                </div>
+                            </div>
+                            <div class="row techniqueProperties">
+                                <div class="col col-md-6">
+                                    <p class="propertyLabel"><strong>Dauer: </strong></p>
+                                    <p id="thirdTechniqueDuration"></p>
+                                </div>
+                                <div class="col col-md-6">
+                                    <p class="propertyLabel"><strong>Schwierigkeit: </strong></p>
+                                    <p id="thirdTechniqueDifficulty"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="thirdAnotherButton" class="btn btn-lg btn-warning">Durch Ähnliche Technik Ersetzen!</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtering Properties and Criticism -->
+            <div class="row">
+                <div id="filteringProperties" class="col col-md-4 col-md-offset-1">
+                    <form>
+                        <h1>Filter Wählen:</h1>
+                        <!-- Group / Single -->
+                        <fieldset class="form-group">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="singleGroup" id="radioSingle" value="radioSingle">
+                                    Einzelperson
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="singleGroup" id="radioGroup" value="radioGroup">
+                                    Gruppe
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="singleGroup" id="radioGroupBoth" value="radioGroupBoth" checked>
+                                    Beides
+                              </label>
+                            </div>
+                        </fieldset>
+
+                        <!-- Physical Object -->
+                        <fieldset class="form-group">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="phys" id="radioWithPhys" value="radioWithPhys">
+                                    Mit Hilfsgegenstand
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="phys" id="radioWithoutPhys" value="radioWithoutPhys">
+                                    Ohne Hilfsgegenstand
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="phys" id="radioPhysBoth" value="radioPhysBoth" checked>
+                                    Beides
+                              </label>
+                            </div>
+                        </fieldset>
+
+                        <!-- Moderated -->
+                        <fieldset class="form-group">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="moderated" id="radioModerated" value="radioModerated">
+                                    Mit Moderator
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="moderated" id="radioNotModerated" value="radioNotModerated">
+                                    Ohne Moderator
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="moderated" id="radioModeratedBoth" value="radioModeratedBoth" checked>
+                                    Beides
+                              </label>
+                            </div>
+                        </fieldset>
+
+                        <!-- Duration -->
+                        <fieldset class="form-group">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="duration" id="radioShortDuration" value="radioShortDuration">
+                                    Kurze Anwendungsdauer
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="duration" id="radioLongDuration" value="radioLongDuration">
+                                    Lange Anwendungsdauer
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="duration" id="radioBothDuration" value="radioBothDuration" checked>
+                                    Egal
+                              </label>
+                            </div>
+                        </fieldset>
+
+                        <!-- Difficulty -->
+                        <fieldset class="form-group">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="difficulty" id="radioEasy" value="radioEasy">
+                                    Einfache Anwendung
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="difficulty" id="radioDifficult" value="radioDifficult">
+                                    Nicht-So-Einfache Anwendung
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="difficulty" id="radioDiffBoth" value="radioDiffBoth" checked>
+                                    Beides
+                              </label>
+                            </div>
+                        </fieldset>
+
+                    </form>
+                    <button id="filteringButton" type="submit" class="btn btn-lg btn-primary">Neue Empfehlungen Generieren!</button>
+                </div>
+
+                <!-- Criticism -->
+                <div id="criticism" class="col col-md-4 col-md-offset-2">
+                    <h1>Prioritäten Anpassen:</h1>
+                    <button id="moreBeginnerFriendlyButton" type="submit" class="btn btn-lg btn-primary">Anfängerfreundlichere Techniken!</button>
+                    <button id="lessStrenuousButton" type="submit" class="btn btn-lg btn-primary">Weniger aufwändig anzuwendende Techniken!</button>
+                    <button id="lessConventionalButton" type="submit" class="btn btn-lg btn-primary">Techniken für unkonventionellere Ideen!</button>
+                    <button id="comprehensiveButton" type="submit" class="btn btn-lg btn-primary">Umfangreichere Techniken!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery & Bootstrap js -->
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
